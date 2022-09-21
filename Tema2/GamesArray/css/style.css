@@ -10,6 +10,7 @@ body {
     box-shadow: 10px 10px 10px 5px #000000;
     padding: 10px;
     font-family: 'Franklin Gothic Medium';
+    margin-bottom: 40px;
 }
 
 .card h2 {
@@ -21,25 +22,33 @@ body {
     flex-direction: row;
 }
 
+.cardBody a {
+    width: 20%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.cardBody img {
+    width: 100%;
+}
+
 .cardBody p {
     color: #ffffff;
     text-align: justify;
+    width: 80%;
 }
 
 .cardBody ul {
     width: 20%;
+    color: #ffffff;
+    padding-left: 20px;
 }
 
 .cardBody li {
-    color: #ffffff;
+    margin-left: 20px;
 }
 .cardBody li:hover {
     color: #d65200;
-}
-
-.card img { 
-    width: 20%;
-    margin-right: 20px;
 }
 
 #content {
