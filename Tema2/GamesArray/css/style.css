@@ -1,0 +1,60 @@
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #2c2c2c;
+    min-height: 100vh;
+}
+
+.card {
+    box-shadow: 10px 10px 10px 5px #000000;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.card h2 {
+    color: #d65200;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardBody p {
+    color: #ffffff;
+    text-align: justify;
+}
+
+.cardBody ul {
+    width: 20%;
+}
+
+.cardBody li {
+    color: #ffffff;
+}
+.cardBody li:hover {
+    color: #d65200;
+}
+
+.card img { 
+    width: 20%;
+    margin-right: 20px;
+}
+
+#content {
+    width: 80%;
+    margin: 10px auto;
+}
+
+footer {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer p {
+    color: #d65200;
+    font-family: 'Franklin Gothic Medium';
+}
