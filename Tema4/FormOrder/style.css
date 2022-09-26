@@ -1,0 +1,36 @@
+
+form {
+    width: 75%;
+    margin: 0 auto;
+    padding: 10%;
+    box-sizing: border-box;
+    background-image: url(Images/bg2.jpg);
+}
+
+.form_element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form_element label {
+    color: #d65200;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+#submit {
+    background-color: #FAF9F7;
+    color: #d65200;
+    width: 30%;
+    height: 30px;
+    margin: 0 auto;
+    border: 2px solid #d65200;
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
