@@ -44,6 +44,6 @@ if (isset($_POST['send'])) {
     }
     header('Location: answer.php');
 }else {
-    header('Location: contactForm.php');
+    header('Location: form.php');
 }
 ?>
