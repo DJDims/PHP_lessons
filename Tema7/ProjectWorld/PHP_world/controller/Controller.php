@@ -9,5 +9,24 @@ class Controller {
         include_once('view/error404.php');
         return;
     }
+
+    public static function StateList(){
+        $stateList = Model::getStateList();
+        include_once('view/stateList.php');
+        return;
+    }
+
+    public static function CityListByState($id){
+        $state = Model::getState($id);
+        $cityList = Model::getCityListByState($id);
+        include_once('view/cityList.php');
+        return;
+    }
+
+    public static function CitiesList(){
+        $cityList = Model::getCityList();
+        include_once('view/cityList.php');
+        return;
+    }
 }
 ?>
