@@ -28,5 +28,19 @@ class Model {
         $response = $db -> getAll($query);
         return $response;
     }
+
+    public static function getContinentList(){
+        $query = 'SELECT DISTINCT `continent` FROM `country`';
+        $db = new database();
+        $response = $db -> getAll($query);
+        return $response;
+    }
+
+    public static function getStateListByContinent($id){
+        $query = 'SELECT * FROM `country` WHERE `Continent` = "'.$id.'"';
+        $db = new database();
+        $response = $db -> getAll($query);
+        return $response;
+    }
 }
 ?>

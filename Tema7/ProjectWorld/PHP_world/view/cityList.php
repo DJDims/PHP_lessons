@@ -8,10 +8,10 @@ if(isset($state) && $state){
 }
 ?>
 
-<table style="margin:0">
+<table class="table table-striped" style="margin:0">
     <thead>
         <?php
-            echo '<tr><td colspan="3" class="textposition">Total cities<td>';
+            echo '<tr><td colspan="3" class="textposition">Total cities</td>';
             echo '<td>'.count($cityList).'</td></tr>';
         ?>
         <tr>
@@ -31,7 +31,7 @@ if(isset($state) && $state){
                 <td>'.$city['Population'].'</td>
                 </tr>';
         }
-        echo '<tr><td colspan="3" class="textposition">Total cities<td>';
+        echo '<tr><td colspan="3" class="textposition">Total cities</td>';
         echo '<td>'.count($cityList).'</td></tr>';
         ?>
     </tbody>

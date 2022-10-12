@@ -2,21 +2,21 @@
 ob_start();
 $title = 'Список стран';
 ?>
-<table style="margin:0">
+<table class="table table-striped" style="margin:0">
     <thead>
         <?php
-            echo '<tr><td colspan="7" class="textposition">Total countries<td>';
+            echo '<tr><td colspan="7" class="textposition">Total countries</td>';
             echo '<td>'.count($stateList).'</td></tr>';
         ?>
         <tr>
             <th style="width:5%">Nr</th>
-            <th style="width:13.5714285714%">Code</th>
-            <th style="width:13.5714285714%">Country name</th>
-            <th style="width:13.5714285714%">IndepYear</th>
-            <th style="width:13.5714285714%">Population</th>
-            <th style="width:13.5714285714%">Continent</th>
-            <th style="width:13.5714285714%">GovernmentForm</th>
-            <th style="width:13.5714285714%">Cities</th>
+            <th style="width:10%">Code</th>
+            <th style="width:10%">Country name</th>
+            <th style="width:10%">IndepYear</th>
+            <th style="width:10%">Continent</th>
+            <th style="width:10%">Population</th>
+            <th style="width:30%">GovernmentForm</th>
+            <th style="width:15%">Cities</th>
         </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@ $title = 'Список стран';
                 <td><a href="citiesState?'.$state['Code'].'">Cities by State</a></td>
                 </tr>';
         }
-        echo '<tr><td colspan="7" class="textposition">Total countries<td>';
+        echo '<tr><td colspan="7" class="textposition">Total countries</td>';
         echo '<td>'.count($stateList).'</td></tr>';
         ?>
     </tbody>

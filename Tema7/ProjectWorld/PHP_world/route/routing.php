@@ -22,6 +22,14 @@ if ($route == '' OR $route == 'index.php') {
 	}
 } elseif($route == 'cities'){
 	Controller::CitiesList();
+} elseif($route == 'continent'){
+	Controller::ContinentList();
+} elseif($route == 'continentState'){
+	if (isset($id)) {
+		Controller::StateListByContinent($id);
+	} else {
+		Controller::error404();
+	}
 } else {
 	Controller::error404();
 }
