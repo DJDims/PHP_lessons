@@ -30,6 +30,12 @@ if ($route == '' OR $route == 'index.php') {
 	} else {
 		Controller::error404();
 	}
+} elseif($route == 'search'){
+	if (isset($_GET['text'])) {
+		Controller::SearchByCode($_GET['text']);
+	} else {
+		Controller::error404();
+	}
 } else {
 	Controller::error404();
 }

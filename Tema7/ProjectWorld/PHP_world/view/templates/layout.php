@@ -9,6 +9,7 @@
 	<!-- custom -->
 	<link href="public/css/templatemo-style.css" rel="stylesheet">
 	<link href="public/css/style.css" rel="stylesheet">
+	<link href="public/css/search.css" rel="stylesheet">
 
 </head>
 
@@ -22,6 +23,14 @@
 						<a href="./" class="navbar-brand"><strong>Сountries of the World</strong></a>
 						<br>
 						<hr>
+					</div>
+					<div class="row">
+						<div class="search">
+							<form class="form-search" action="search" method="GET">
+								<input type="text" name="text" class="form-control input-sm" maxlength="64" placeholder="Enter country name or code">
+								<button type="submit" class="btn btn-primary btn-sm">Search</button>
+							</form>
+						</div>
 					</div>
 					<!--    меню              -->
 					<div class="collapse navbar-collapse">
@@ -78,4 +87,5 @@
 		<!-- end footer -->
 	</div>
 </body>
+
 </html>

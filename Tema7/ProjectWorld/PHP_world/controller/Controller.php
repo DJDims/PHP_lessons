@@ -42,5 +42,11 @@ class Controller {
         include_once('view/continentList.php');
         return;
     }
+
+    public static function SearchByCode($id){
+        $state = Model::getStateByCode($id);
+        include_once('view/stateCode.php');
+        return;
+    }
 }
 ?>
