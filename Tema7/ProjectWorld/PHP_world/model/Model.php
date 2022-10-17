@@ -46,7 +46,7 @@ class Model {
     public static function getStateByCode($id){
         $query = 'SELECT * FROM `country` WHERE `Code`="'.$id.'" OR `Name` LIKE "%'.$id.'%"';
         $db = new database();
-        $response = $db -> getAll($query);
+        $response = $db -> getOne($query);
         return $response;
     }
 }

@@ -11,7 +11,10 @@ $title = 'Государство';
         echo '<p><b>IndepYear:</b>'.$state['Population'].'</p>';
         echo '<p><b>IndepYear:</b>'.$state['Continent'].'</p>';
         echo '<p><b>IndepYear:</b>'.$state['GovernmentForm'].'</p>';
+    }else {
+        echo '<h3><b>Нет данных</b></h3>';
     }
+    echo '</div>';
 ?>
 
 <?php

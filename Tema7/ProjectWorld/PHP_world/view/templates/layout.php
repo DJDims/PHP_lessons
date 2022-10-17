@@ -40,6 +40,7 @@
 							echo '<li><a href="states">Государства</a></li>';
 							echo '<li><a href="cities">Города</a></li>';
 							echo '<li><a href="continent">Континенты</a></li>';
+							echo '<li><a href="countryList">Manage</a></li>';
 							?>
 						</ul>
 					</div>

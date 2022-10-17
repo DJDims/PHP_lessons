@@ -36,6 +36,21 @@ if ($route == '' OR $route == 'index.php') {
 	} else {
 		Controller::error404();
 	}
+} elseif($route == 'countryList'){
+	ControllerCountry::CountryList();
+} elseif($route == 'addCountry'){
+	ControllerCountry::CountryAddForm();
+} elseif($route == 'addResult'){
+	ControllerCountry::CountryAddResult();
+
+// } elseif($route == ''){
+
+// } elseif($route == ''){
+
+// } elseif($route == ''){
+
+// } elseif($route == ''){
+
 } else {
 	Controller::error404();
 }
