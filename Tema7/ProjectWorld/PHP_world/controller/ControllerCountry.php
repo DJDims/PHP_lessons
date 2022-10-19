@@ -13,7 +13,7 @@ class ControllerCountry {
     
     public static function CountryAddResult(){
         $result = ModelCountry::CountryAddResult();
-        if ($result) {
+        if ($result == true) {
             $stateList = Model::getStateList();
             $_SESSION['message'] = 'Данные добавлены';
             header('Location: countryList');
@@ -21,7 +21,6 @@ class ControllerCountry {
             $error = 'Не удалось добавить данные';
             include_once('view/countryAdd.php');
         }
-        include_once('view/countryList.php');
         return;
     }
 }

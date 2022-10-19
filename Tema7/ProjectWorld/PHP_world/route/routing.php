@@ -42,7 +42,7 @@ if ($route == '' OR $route == 'index.php') {
 	ControllerCountry::CountryAddForm();
 } elseif($route == 'addResult'){
 	ControllerCountry::CountryAddResult();
-
+}
 // } elseif($route == ''){
 
 // } elseif($route == ''){
@@ -51,7 +51,7 @@ if ($route == '' OR $route == 'index.php') {
 
 // } elseif($route == ''){
 
-} else {
+else {
 	Controller::error404();
 }
 

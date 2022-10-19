@@ -42,8 +42,8 @@ if (isset($_SESSION['message'])) {
                 <td>'.$state['Continent'].'</td>
                 <td>'.$state['GovernmentForm'].'</td>
                 <td>
-                    <a href="editCountry?'.$state['Code'].'" class="btn btn-success btn-sm btn-flat">Edit</a>
-                    <a href="deleteCountry?'.$state['Code'].'" class="btn btn-danger btn-sm btn-flat">Delete</a>
+                    <a href="editCountry?'.$state['Code'].'" class="btn btn-success btn-sm btn-flat" style="margin-left: 5px">Edit</a>
+                    <a href="deleteCountry?'.$state['Code'].'" class="btn btn-danger btn-sm btn-flat" style="margin-left: 5px">Delete</a>
                 </td>
                 </tr>';
         }

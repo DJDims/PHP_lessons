@@ -15,9 +15,15 @@ class ModelCountry {
             if ($Code != '' && $Name != '') {
                 $Created_at = date('Y-m-d');
                 $Updated_at = date('Y-m-d');
-                $query = '';
+                $query = "INSERT INTO `country`(`Code`, `Name`, `Continent`, `Region`, `IndepYear`, `Population`, `GovernmentForm`, `HeadOfState`, `Code2`, `created_at`, `updated_at`) VALUES ('$Code','$Name','$Continent','$Region','$IndepYear','$Population','$GovernmentForm','$HeadOfState','$Code2','$Created_at','$Updated_at')";
+                $db = new database();
+                $response = $db -> executeRun($query);
+                if ($response == true){
+                    $result = true;
+                }
             }
         }
+        return $result;
     }
 }
 ?>
