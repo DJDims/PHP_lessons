@@ -42,16 +42,31 @@ if ($route == '' OR $route == 'index.php') {
 	ControllerCountry::CountryAddForm();
 } elseif($route == 'addResult'){
 	ControllerCountry::CountryAddResult();
-}
-// } elseif($route == ''){
-
-// } elseif($route == ''){
-
-// } elseif($route == ''){
-
-// } elseif($route == ''){
-
-else {
+} elseif($route == 'editCountry'){
+	if (isset($id)) {
+		ControllerCountry::CountryEditForm($id);
+	} else {
+		Controller::error404();
+	}
+} elseif($route == 'editResult'){
+	if (isset($id)) {
+		ControllerCountry::CountryEditResult($id);
+	} else {
+		Controller::error404();
+	}
+} elseif($route == 'deleteCountry'){
+	if (isset($id)) {
+		ControllerCountry::CountryDeleteForm($id);
+	} else {
+		Controller::error404();
+	}
+} elseif($route == 'deleteResult'){
+	if (isset($id)) {
+		ControllerCountry::CountryDeleteResult($id);
+	} else {
+		Controller::error404();
+	}
+} else {
 	Controller::error404();
 }
 
