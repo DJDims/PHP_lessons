@@ -4,19 +4,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>Сountries of the world</title>
-	<!-- bootstrap -->
 	<link rel="stylesheet" href="public/css/bootstrap.min.css">
-	<!-- custom -->
 	<link href="public/css/templatemo-style.css" rel="stylesheet">
 	<link href="public/css/style.css" rel="stylesheet">
 	<link href="public/css/search.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body style="margin-top:50px;">
 	<div id="container">
 		<div id="header">
-			<!-- start navigation -->
 			<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
@@ -32,7 +29,6 @@
 							</form>
 						</div>
 					</div>
-					<!--    меню              -->
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right tnav">
 							<?php
@@ -41,16 +37,14 @@
 							echo '<li><a href="cities">Города</a></li>';
 							echo '<li><a href="continent">Континенты</a></li>';
 							echo '<li><a href="countryList">Manage</a></li>';
+							echo '<li><a href="cityListManage">ManageCity</a></li>';
 							?>
 						</ul>
 					</div>
-					<!--    end меню              -->
 				</div>
 			</div>
-			<!-- end navigation -->
 		</div>
 		<div id="body">
-			<!-- start content -->
 			<section class="templatemo-section ">
 				<div class="container">
 					<div class="row">
@@ -72,9 +66,7 @@
 					</div>
 				</div>
 			</section>
-			<!-- end content -->
 		</div>
-		<!-- start footer -->
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -85,7 +77,6 @@
 				</div>
 			</div>
 		</footer>
-		<!-- end footer -->
 	</div>
 </body>
 
