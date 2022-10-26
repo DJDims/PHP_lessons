@@ -20,11 +20,11 @@ if (isset($_SESSION['message'])) {
             echo '<td>'.count($cityList).'</td></tr>';
         ?>
         <tr>
-            <th style="width:25%">Nr</th>
-            <th style="width:25%">City name</th>
-            <th style="width:25%">CountryCode</th>
-            <th style="width:25%">Population</th>
-            <th style="width:25%">Actions</th>
+            <th style="width:20%">Nr</th>
+            <th style="width:20%">City name</th>
+            <th style="width:20%">CountryCode</th>
+            <th style="width:20%">Population</th>
+            <th style="width:30%">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -36,8 +36,8 @@ if (isset($_SESSION['message'])) {
                 <td>'.$city['CountryCode'].'</td>
                 <td>'.$city['Population'].'</td>
                 <td>
-                    <a href="editCity?'.$city['CountryCode'].'" class="btn btn-success btn-sm btn-flat" style="margin-left: 5px">Edit</a>
-                    <a href="deleteCity?'.$city['CountryCode'].'" class="btn btn-danger btn-sm btn-flat" style="margin-left: 5px">Delete</a>
+                    <a href="editCity?'.$city['ID'].'" class="btn btn-success btn-sm btn-flat" style="margin-left: 5px">Edit</a>
+                    <a href="deleteCity?'.$city['ID'].'" class="btn btn-danger btn-sm btn-flat" style="margin-left: 5px">Delete</a>
                     </td>
                 </tr>';
         }

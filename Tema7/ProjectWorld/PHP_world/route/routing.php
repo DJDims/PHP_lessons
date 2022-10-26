@@ -66,6 +66,36 @@ if ($route == '' OR $route == 'index.php') {
 	} else {
 		Controller::error404();
 	}
+}elseif($route == 'cityListManage'){
+	ControllerCity::CityListManage();
+} elseif($route == 'addCity'){
+	ControllerCity::CityAddForm();
+} elseif($route == 'addCityResult'){
+	ControllerCity::CityAddResult();
+} elseif($route == 'editCity'){
+	if (isset($id)) {
+		ControllerCity::CityEditForm($id);
+	} else {
+		Controller::error404();
+	}
+} elseif($route == 'editCityResult'){
+	if (isset($id)) {
+		ControllerCity::CityEditResult($id);
+	} else {
+		Controller::error404();
+	}
+} elseif($route == 'deleteCity'){
+	if (isset($id)) {
+		ControllerCity::CityDeleteForm($id);
+	} else {
+		Controller::error404();
+	}
+} elseif($route == 'deleteCityResult'){
+	if (isset($id)) {
+		ControllerCity::CityDeleteResult($id);
+	} else {
+		Controller::error404();
+	}
 } else {
 	Controller::error404();
 }
