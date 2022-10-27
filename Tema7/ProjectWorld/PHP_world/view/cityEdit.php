@@ -13,7 +13,7 @@ $continents = array('Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Ant
     ?>
 </div>
 <div>
-    <form action="addCityResult" method="POST">
+    <form action="editCityResult?<?php echo $city['ID']?>" method="POST">
         <div class="col-md-6" style="margin-top:10px;">
             <div class="col-md-12">
                 <div class="form-group">

@@ -51,7 +51,7 @@ class Model {
     }
 
     public static function getCityByCode($id){
-        $query = 'SELECT * FROM `country` WHERE `Code`="'.$id.'"';
+        $query = 'SELECT * FROM `city` WHERE `ID`="'.$id.'"';
         $db = new database();
         $response = $db -> getOne($query);
         return $response;

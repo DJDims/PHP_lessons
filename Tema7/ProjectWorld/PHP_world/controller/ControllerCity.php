@@ -33,15 +33,36 @@ class ControllerCity{
     }
 
     public static function CityEditResult($id) {
-
+        $result = ModelCity::CityEditResult($id);
+        if ($result == true) {
+            $_SESSION['message'] = 'Данные изменены - город '.$id;
+            $cityList = Model::getCityList();
+            header('Location: cityListManage');
+        } else {
+            $city = Model::getCityByCode($id);
+            $error = 'Не удалось изменить данные';
+            include_once('view/cityEdit.php');
+        }
+        return;
     }
 
     public static function CityDeleteForm($id) {
-
+        $city = Model::getCityByCode($id);
+        include_once('view/cityDelete.php');
+        return;
     }
 
     public static function CityDeleteResult($id) {
-
+        $result = ModelCity::CityDeleteResult($id);
+        if ($result == true) {
+            $_SESSION['message'] = 'Данные удалены - город '.$id;
+            $cityList = Model::getCityList();
+            header('Location: cityListManage');
+        } else {
+            $city = Model::getCityByCode($id);
+            $error = 'Не удалось удалить данные';
+            include_once('view/cityDelete.php');
+        }
     }
 
 }
