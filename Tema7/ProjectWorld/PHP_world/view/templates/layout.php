@@ -8,7 +8,7 @@
 	<link href="public/css/templatemo-style.css" rel="stylesheet">
 	<link href="public/css/style.css" rel="stylesheet">
 	<link href="public/css/search.css" rel="stylesheet">
-
+	<link href="public/css/login.css" rel="stylesheet">
 </head>
 
 <body style="margin-top:50px;">
@@ -29,6 +29,15 @@
 							</form>
 						</div>
 					</div>
+					<ul class="nav navbar-nav navbar-right" id="login">
+						<?php
+						if (!isset($_SESSION['sessionId'])) {
+							echo '<li><a href="login">LogIn</a></li>';
+						} else {
+							echo '<li><a href="logout">'.$_SESSION['name'].' - LogOut</a></li>';
+						}
+						?>
+					</ul>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right tnav">
 							<?php
@@ -36,8 +45,10 @@
 							echo '<li><a href="states">Государства</a></li>';
 							echo '<li><a href="cities">Города</a></li>';
 							echo '<li><a href="continent">Континенты</a></li>';
-							echo '<li><a href="countryList">Manage</a></li>';
-							echo '<li><a href="cityListManage">ManageCity</a></li>';
+							if (isset($_SESSION['sessionId']) && $_SESSION['role'] == 'admin') {
+								echo '<li><a href="countryList">Manage</a></li>';
+								echo '<li><a href="cityListManage">ManageCity</a></li>';
+							}
 							?>
 						</ul>
 					</div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 26 2022 г., 19:50
--- Версия сервера: 10.4.24-MariaDB
--- Версия PHP: 8.1.6
+-- Время создания: Окт 28 2022 г., 08:21
+-- Версия сервера: 10.4.25-MariaDB
+-- Версия PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,10 +41,8 @@ CREATE TABLE `city` (
 --
 
 INSERT INTO `city` (`ID`, `Name`, `CountryCode`, `Population`, `created_at`, `updated_at`) VALUES
-(175, 'Antwerpen', 'BEL', 446525, '2022-10-26', '2022-10-26'),
 (176, 'Gent', 'BEL', 224180, '2022-10-26', '2022-10-26'),
 (177, 'Charleroi', 'BEL', 200827, '2022-10-26', '2022-10-26'),
-(178, 'Liège', 'BEL', 185639, '2022-10-26', '2022-10-26'),
 (179, 'Bruxelles [Brussel]', 'BEL', 133859, '2022-10-26', '2022-10-26'),
 (180, 'Brugge', 'BEL', 116246, '2022-10-26', '2022-10-26'),
 (181, 'Schaerbeek', 'BEL', 105692, '2022-10-26', '2022-10-26'),
@@ -865,10 +863,10 @@ INSERT INTO `city` (`ID`, `Name`, `CountryCode`, `Population`, `created_at`, `up
 (2172, 'Leiyang', 'CHN', 130115, '2022-10-26', '2022-10-26'),
 (2173, 'Zalantun', 'CHN', 130031, '2022-10-26', '2022-10-26'),
 (2174, 'Weihai', 'CHN', 128888, '2022-10-26', '2022-10-26'),
-(2175, 'Loudi', 'CHN', 128418, '2022-10-26', '2022-10-26');
-INSERT INTO `city` (`ID`, `Name`, `CountryCode`, `Population`, `created_at`, `updated_at`) VALUES
+(2175, 'Loudi', 'CHN', 128418, '2022-10-26', '2022-10-26'),
 (2176, 'Qingzhou', 'CHN', 128258, '2022-10-26', '2022-10-26'),
-(2177, 'Qidong', 'CHN', 126872, '2022-10-26', '2022-10-26'),
+(2177, 'Qidong', 'CHN', 126872, '2022-10-26', '2022-10-26');
+INSERT INTO `city` (`ID`, `Name`, `CountryCode`, `Population`, `created_at`, `updated_at`) VALUES
 (2178, 'Huaihua', 'CHN', 126785, '2022-10-26', '2022-10-26'),
 (2179, 'Luohe', 'CHN', 126438, '2022-10-26', '2022-10-26'),
 (2180, 'Chuzhou', 'CHN', 125341, '2022-10-26', '2022-10-26'),
@@ -1296,9 +1294,29 @@ INSERT INTO `country` (`Code`, `Name`, `Continent`, `Region`, `IndepYear`, `Popu
 ('FRA', 'France', 'Europe', 'Western Europe', 843, 59225700, 'Republic', 'Jacques Chirac', 'FR', '2022-10-17', '2022-10-17'),
 ('FIN', 'Finland', 'Europe', 'Nordic Countries', 1917, 5171300, 'Republic', 'Tarja Halonen', 'FI', '2022-10-17', '2022-10-17'),
 ('EST', 'Estonia', 'Europe', 'Baltic Countries', 1991, 1439200, 'Republic', 'Lennart Meri', 'EE', '2022-10-17', '2022-10-17'),
-('USA', 'United States', 'North America', 'North America', 1776, 278357000, 'Federal Republic', 'George W. Bush', 'US', '2022-10-17', '2022-10-17'),
-('ATA', 'Antarctica', 'Antarctica', 'Antarctica', NULL, 0, 'Co-administrated', NULL, 'AQ', '2022-10-17', '2022-10-17'),
-('AWD', 'awdawd', 'Asia', 'awd', 23423, 123123, 'efsf', '', '34', '2022-10-18', '2022-10-18');
+('USA', 'United States', 'North America', 'North America', 1776, 278357000, 'Federal Republic', 'George W. Bush', 'US', '2022-10-17', '2022-10-17');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `role` enum('admin','user') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `username`, `role`) VALUES
+(1, 'admin@test.ee', '$2y$12$mjv/GPng4oQFohhkPl8RPucmgRDFVs/UCVP02US.r92ra09kK4d7u', 'Admin', 'admin'),
+(2, 'user@test.ee', '$2y$12$mjv/GPng4oQFohhkPl8RPucmgRDFVs/UCVP02US.r92ra09kK4d7u', 'User', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -1318,6 +1336,13 @@ ALTER TABLE `country`
 ALTER TABLE `country` ADD FULLTEXT KEY `ftext_name` (`Name`);
 
 --
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -1325,7 +1350,13 @@ ALTER TABLE `country` ADD FULLTEXT KEY `ftext_name` (`Name`);
 -- AUTO_INCREMENT для таблицы `city`
 --
 ALTER TABLE `city`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4080;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4083;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
