@@ -19,5 +19,13 @@ class ControllerAdmin{
         include_once('view/formLogin.php');
         return;
     }
+
+    public static function FormProfile(){
+        include_once('view/profileTable.php');
+    }
+    public static function profileEditResult(){
+        $result = ModelAdmin::ChangePassword();
+        include_once('view/profileTable.php');
+    }
 }
 ?>

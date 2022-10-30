@@ -29,12 +29,13 @@
 							</form>
 						</div>
 					</div>
-					<ul class="nav navbar-nav navbar-right" id="login">
+					<ul class="nav navbar-nav navbar-right" style="margin-top: 10px;" id="login">
 						<?php
 						if (!isset($_SESSION['sessionId'])) {
 							echo '<li><a href="login">LogIn</a></li>';
 						} else {
 							echo '<li><a href="logout">'.$_SESSION['name'].' - LogOut</a></li>';
+							echo '<li><a href="profile">Profile</a></li>';
 						}
 						?>
 					</ul>

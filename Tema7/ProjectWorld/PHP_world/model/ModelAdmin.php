@@ -35,5 +35,25 @@ class ModelAdmin{
         session_destroy();
         return;
     }
+
+    public static function ChangePassword(){
+        $result = array(false, 'Incorrect password');
+        if (isset($_POST['send'])) {
+            $newPassword = $_POST['newPassword'];
+            $confirmPassword = $_POST['confirmPassword'];
+            if ($newPassword !== "" && $newPassword == $confirmPassword) {
+                $passwordHash = password_hash($newPassword, PASSWORD_DEFAULT);
+                $query = "UPDATE `users` SET `password` = '$passwordHash' WHERE `users`.`id` = ".$_SESSION['userId'];
+                $db = new database();
+                $response = $db -> executeRun($query);
+                if ($response == true) {
+                    $result = array(true, "Password changed");
+                } else {
+                    $result = array(false, "No insert change password");
+                }
+            }
+        }
+        return $result;
+    }
 }
 ?>

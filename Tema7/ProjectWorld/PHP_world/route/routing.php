@@ -12,11 +12,11 @@ if(strstr($_SERVER['REQUEST_URI'],'?')){
 
 if ($route == '' OR $route == 'index.php') {
 	Controller::StartSite();
-}elseif($route == 'login') {
+} elseif($route == 'login') {
 	ControllerAdmin::FormLogin();
-}elseif($route == 'loginResult') {
+} elseif($route == 'loginResult') {
 	ControllerAdmin::LoginAction();
-}elseif($route == 'logout') {
+} elseif($route == 'logout') {
 	ControllerAdmin::LogoutAction();
 } elseif($route == 'states'){
 	Controller::StateList();
@@ -41,6 +41,14 @@ if ($route == '' OR $route == 'index.php') {
 		Controller::SearchByCode($_GET['text']);
 	} else {
 		Controller::error404();
+	}
+}
+
+if (isset($_SESSION['role'])) {
+	if ($route == 'profile') {
+		ControllerAdmin::FormProfile();
+	} elseif($route == 'profileEditResult'){
+		ControllerAdmin::profileEditResult();
 	}
 }
 
